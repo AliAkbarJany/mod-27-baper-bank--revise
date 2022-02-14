@@ -5,15 +5,14 @@
 // const first = doubleIt(4);
 // const second = doubleIt(7);
 
-function getInputValue() {
-    const depositInput = document.getElementById('deposit-input');
+function getInputValue(inputId) {
+    const inputField = document.getElementById(inputId);
 
-    const depositAmountText = depositInput.value;
-    const depositAmount = parseFloat(depositAmountText);
+    const inputAmountText = inputField.value;
+    const amountValue = parseFloat(inputAmountText);
     // clear input field
-    depositInput.value = '';
-    return depositAmount;
-
+    inputField.value = '';
+    return amountValue;
 
 }
 
@@ -21,12 +20,14 @@ function getInputValue() {
 document.getElementById('deposit-button').addEventListener('click', function () {
     // console.log('click deposit button');
 
-    /* const depositInput = document.getElementById('deposit-input');
-
+    /* 
+    const depositInput = document.getElementById('deposit-input');
     const depositAmountText = depositInput.value;
     const depositAmount = parseFloat(depositAmountText); */
     // console.log(depositAmount);
-    const depositAmount = getInputValue();
+
+
+    const depositAmount = getInputValue('deposit-input');
 
 
 
@@ -60,10 +61,14 @@ document.getElementById('deposit-button').addEventListener('click', function () 
 document.getElementById('withdraw-button').addEventListener('click', function () {
     // console.log('click withdraw');
 
+    /* 
     const withdrawInput = document.getElementById('withdraw-input');
-
     const withdrawAmountText = withdrawInput.value;
-    const withdrawAmount = parseFloat(withdrawAmountText);
+    const withdrawAmount = parseFloat(withdrawAmountText); */
+
+
+    const withdrawAmount = getInputValue('withdraw-input');
+
     /*
     console.log(withdrawAmount);
     console.log(withdrawAmountText);
@@ -88,7 +93,7 @@ document.getElementById('withdraw-button').addEventListener('click', function ()
     balanceTotal.innerText = previousbalanceTotal - withdrawAmount;
 
 
-    // clear input field
-    withdrawInput.value = '';
+    /*  // clear input field
+     withdrawInput.value = ''; */
 
 })
